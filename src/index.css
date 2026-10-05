@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm, editorial palette */
+  --color-ivory: #f6f1e8;
+  --color-ivory-soft: #faf6ee;
+  --color-cream: #ece2cf;
+  --color-stone: #d6c9b3;
+  --color-stone-deep: #b8aa92;
+  --color-ink: #2a2520;
+  --color-ink-soft: #5b544a;
+  --color-ink-mute: #8a8276;
+  --color-sage: #7d8871;
+  --color-sage-deep: #5c6652;
+  --color-sage-soft: #c7ccbd;
+  --color-rule: #d9cfbc;
+
+  --font-serif: "Fraunces", "Source Serif Pro", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Serif display style */
+.font-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  letter-spacing: -0.015em;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-sage-deep);
+}
+
+/* Thin hairline rule */
+.hairline {
+  border-color: var(--color-rule);
+}
+
+/* Subtle underline link */
+.link-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-ink);
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-ink);
+  padding-bottom: 2px;
+  transition: color 200ms ease, border-color 200ms ease, gap 200ms ease;
+}
+.link-arrow:hover {
+  color: var(--color-sage-deep);
+  border-color: var(--color-sage-deep);
+  gap: 0.6rem;
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-ink);
+  color: var(--color-ivory-soft);
+  padding: 0.95rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  transition: background-color 200ms ease, transform 120ms ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-sage-deep);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Secondary / ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-ink);
+  padding: 0.9rem 1.55rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--color-ink);
+  border-radius: 2px;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.btn-ghost:hover {
+  background-color: var(--color-ink);
+  color: var(--color-ivory-soft);
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-stone-deep);
+  padding: 0.75rem 0.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  transition: border-color 200ms ease;
+  border-radius: 0;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-ink);
+}
+.form-input::placeholder {
+  color: var(--color-ink-mute);
+}
+
+/* Container */
+.container-editorial {
+  width: 100%;
+  max-width: 76rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container-editorial {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Fade-in on load */
+@keyframes softRise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.soft-rise {
+  animation: softRise 700ms ease-out both;
+}
+.soft-rise-2 {
+  animation: softRise 700ms ease-out 120ms both;
+}
+.soft-rise-3 {
+  animation: softRise 700ms ease-out 240ms both;
+}
